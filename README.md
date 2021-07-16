@@ -21,3 +21,8 @@ I searched for vaccine-related comments (only under vaccine related posts) from 
 * Add your Reddit credentials to the reddit_credentials.txt file. 
 * Run the reddit_scraper.ipynb notebook
 * Visualize the results in the sentiment_analysis.ipynb file. 
+
+## Results:
+
+![Visualization of sentiment analysis](https://github.com/miRNA183/subreddit_sentiment_analysis/blob/main/sentiment_analysis.jpg?raw=true)
+
