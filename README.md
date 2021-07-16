@@ -18,4 +18,6 @@ I searched for vaccine-related comments (only under vaccine related posts) from 
 * iPython
 
 ## To run the code:
-* 
+* Add your Reddit credentials to the reddit_credentials.txt file. 
+* Run the reddit_scraper.ipynb notebook
+* Visualize the results in the sentiment_analysis.ipynb file. 
