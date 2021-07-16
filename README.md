@@ -1,8 +1,8 @@
 # subreddit sentiment analysis
 
-This repository contains a script that performs a query search and scrapes comments from specified subreddits by date. I've used this analysis to perform sentiment analysis on comments related to vaccines in the r/conspiracy, r/conservative, r/politics, and r/COVID19 subreddits over the past year. Comments that were scraped contained a word related to "vaccine" and belonged to a parent post that mentioned vaccines. 
+This repository contains a script that performs a query search and scrapes comments from specified subreddits by date. I've used this analysis to perform sentiment analysis on comments related to vaccines in the r/conservative, r/politics, and r/COVID19 subreddits over the past year. Comments that were scraped contained a word related to "vaccine" and belonged to a parent post that mentioned vaccines. 
 
-I was initially curious to see if there was a meaningful difference in vaccine-related comments between r/conservative and r/politics given their substantially different political leanings. Because the data are quite noisy, I also included r/COVID19 and r/conspiracy to act as positive and negative controls for this analysis (respectively). 
+I was initially curious to see if there was a meaningful difference in vaccine-related comments between r/conservative and r/politics given their substantially different political leanings. Because the data are quite noisy, I also included r/COVID19 to act as a positive (pun intended) control for this analysis. 
 
 The praw and Pushshift API libraries were used to scrape the comments and comment data. The vaderSentiment library was used to quantify sentiment for each comment. pandas graphing functionality was used to visualize the results. 
 
@@ -25,4 +25,5 @@ I searched for vaccine-related comments (only under vaccine related posts) from 
 ## Results:
 
 ![Visualization of sentiment analysis](https://github.com/miRNA183/subreddit_sentiment_analysis/blob/main/sentiment_analysis.jpg?raw=true)
+![Visualization of number of comments per day](https://github.com/miRNA183/subreddit_sentiment_analysis/blob/main/number_of_comments.jpg?raw=true)
 
