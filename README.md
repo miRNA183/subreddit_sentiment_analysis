@@ -1,6 +1,6 @@
 # subreddit sentiment analysis
 
-This repository contains a script that performs a query search and scrapes comments from specified subreddits by date. I've used this analysis to perform sentiment analysis on comments related to vaccines in the r/conservative, r/politics, and r/COVID19 subreddits over the past year. Comments that were scraped contained a word related to "vaccine" and belonged to a parent post that mentioned vaccines. 
+This repository contains a script that performs a query search and scrapes comments from specified subreddits by date. I've used this analysis to perform sentiment analysis on comments related to vaccines in the r/conservative, r/politics, and r/COVID19 subreddits over the past year. Comments that were scraped contained the word "vaccine" and belonged to a parent post that mentioned vaccines. 
 
 I was initially curious to see if there was a meaningful difference in vaccine-related comments between r/conservative and r/politics given their substantially different political leanings. Because the data are quite noisy, I also included r/COVID19 to act as a positive (pun intended) control for this analysis. 
 
