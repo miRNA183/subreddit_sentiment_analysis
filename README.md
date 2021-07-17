@@ -6,7 +6,7 @@ I was initially curious to see if there was a meaningful difference in vaccine-r
 
 The praw and Pushshift API libraries were used to scrape the comments and comment data. The vaderSentiment library was used to quantify sentiment for each comment. pandas graphing functionality was used to visualize the results. 
 
-I searched for vaccine-related comments (only under vaccine related posts) from the dates 2020-07-16 to 2021-07-16. The data were very noisy. For some days, I didn't find any relevant comments in a given subreddit, and for other days there were quite a few comments. A smoothing function was applied (pandas.df.rolling) to make the curves a bit more intepretable. Since the initial time points couldn't be smoothed fully, I dropped the first 30 day's worth of data so that all of the visualized time points were treated consistently. Comment data from the date range 2020-08-15 to 2021-07-16 is visualized below. 
+I searched for vaccine-related comments (only under vaccine related posts) from the dates 2020-07-16 to 2021-07-16. The data were very noisy. For some days, I didn't find any relevant comments in a given subreddit, and for other days there were quite a few comments. A smoothing function was applied (pandas.df.rolling) to make the curves a bit more intepretable. There were also some gaps in the curve so linear interpolation was used to fill these in. Since the initial time points couldn't be smoothed fully, I dropped the first 30 day's worth of data so that all of the visualized time points were treated consistently. Comment data from the date range 2020-08-15 to 2021-07-16 is visualized below. 
 
 ## Dependencies:
 * Python3.8
