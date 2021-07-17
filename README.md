@@ -24,6 +24,6 @@ I searched for vaccine-related comments (only under vaccine related posts) from 
 
 ## Results:
 
-![Visualization of sentiment analysis](https://github.com/miRNA183/subreddit_sentiment_analysis/blob/main/images/sentiment_analysis.jpg?raw=true)
-![Visualization of number of comments per day](https://github.com/miRNA183/subreddit_sentiment_analysis/blob/main/images/number_of_comments.jpg?raw=true)
+![Visualization of sentiment analysis](https://github.com/miRNA183/subreddit_sentiment_analysis/blob/main/images/sentiment_analysis.jp2?raw=true)
+![Visualization of number of comments per day](https://github.com/miRNA183/subreddit_sentiment_analysis/blob/main/images/number_of_comments.jp2?raw=true)
 
