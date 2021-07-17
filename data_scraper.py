@@ -3,8 +3,10 @@ import pandas as pd
 import time
 import datetime as dt
 import praw
+from nltk.stem import PorterStemmer
 from psaw import PushshiftAPI
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+from nltk.stem import PorterStemmer
 
 class Scraper():
 
@@ -27,10 +29,11 @@ class Scraper():
 		self.api = ""
 		self.timestamp_1 = "" # holds time stamp for day being analyzed
 		self.timestamp_2 = "" # holds time stamp for next day
-		cols = ['id', 'date', 'comment', 'score', 'pos_sentiment', 
+		cols = ['id', 'date', 'author', 'comment', 'score', 'pos_sentiment', 
 		'neg_sentiment', 'neu_sentiment', 'compound_sentiment']
 		self.df = pd.DataFrame(columns=cols)
 		self.id_list = [] # list holds id's for relevant posts
+		self.stemmer = "" # holds stemmer object
 		self.sentiment_analyzer = "" # holds sentiment analyzer object
 
 
@@ -43,6 +46,7 @@ class Scraper():
                      username=self.username, \
                      password=self.password)
 		self.api = PushshiftAPI()
+		self.stemmer = PorterStemmer()
 		self.sentiment_analyzer = SentimentIntensityAnalyzer()
 
 	
@@ -87,9 +91,10 @@ class Scraper():
 			submission = self.reddit.submission(item)
 			submission.comments.replace_more(limit=100)
 			for comment in submission.comments.list():
-				if str(self.query) in comment.body.split():
+				comment_words = [self.stemmer.stem(word) for word in comment.body.split()]
+				if self.stemmer.stem(str(self.query)) in comment_words:
 					sentiment_dict = self.get_sentiment(comment.body)
-					temp_list = [comment.id, self.current_date, comment.body, comment.score,
+					temp_list = [comment.id, self.current_date, comment.author, comment.body, comment.score,
 					sentiment_dict["pos"], sentiment_dict["neg"], sentiment_dict["neu"], sentiment_dict["compound"]]
 					self.df.loc[len(self.df)] = temp_list
 
