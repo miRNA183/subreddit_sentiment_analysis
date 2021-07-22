@@ -33,5 +33,5 @@ SKLearn's k-means clustering was used to cluster the data. Once the data were cl
 ![Visualization of sentiment analysis](https://github.com/miRNA183/subreddit_sentiment_analysis/blob/main/images/sentiment_analysis.jpg?raw=true)
 ![Visualization of number of comments per day](https://github.com/miRNA183/subreddit_sentiment_analysis/blob/main/images/post_count.jpg?raw=true)
 ![Visualization of sentiment distributions](https://github.com/miRNA183/subreddit_sentiment_analysis/blob/main/images/sentiment_distributions.jpg?raw=true)
-![Word cloud of vaccine-related comments with negative sentiment](https://github.com/miRNA183/subreddit_sentiment_analysis/blob/main/images/neg_comment_word_cloud.jpg?raw=true)
+![Word cloud of vaccine-related comments with negative sentiment](https://github.com/miRNA183/subreddit_sentiment_analysis/blob/main/images/neg_comment_wordcloud.jpg?raw=true)
 
