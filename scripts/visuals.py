@@ -1,4 +1,6 @@
 import pandas as pd
+import numpy as np
+from sklearn.cluster import KMeans
 
 class DisplaySentimentData():
 
@@ -69,5 +71,59 @@ class DisplaySentimentData():
 
 		self.collect_data()
 		self.plot_data()
+
+class DisplayClusterDistances():
+	"""Prints out a plot of clustering results for a given
+	subreddit's data and sentiment scores."""
+
+	def __init__(self, query, subreddits, sentiment):
+
+		self.query = query # define query
+		self.subreddits = list(subreddits) # define subreddit
+		self.sentiment = sentiment # select sentiment type
+		self.df = pd.DataFrame()
+		self.cluster_distances = []
+
+	def load_data(self):
+		"""Opens specified CSV files."""
+		
+		for subreddit in self.subreddits:
+
+			filepath = "data/"+str(subreddit)+'_'+str(self.query)+'.csv'
+			temp_df = pd.pandas.read_csv(filepath)
+			self.get_cluster_distances(temp_df, subreddit)
+
+	def get_cluster_distances(self, df, subreddit):
+		"""Collects sum of squared distances for cluster values
+		1-10 using kmeans clustering."""
+		
+		K = range(1,10)
+		array = np.array(df[self.sentiment]).reshape(-1, 1)
+		self.cluster_distances = []
+
+		for k in K:
+
+			km = KMeans(n_clusters=k)
+			km = km.fit(array)
+			self.cluster_distances.append(km.inertia_)
+
+	
+		self.df["r/"+subreddit] = self.cluster_distances
+
+
+	def plot(self):
+		"""Plots cluster distances. """
+
+		
+		self.df.index += 1
+		self.df.plot(xlabel="Number of Clusters", ylabel="Sum of Square Distances",title="Elbow Plot for Sentiment Data")
+
+	def main(self):
+		"""Wrapper function."""
+		self.load_data()
+		self.plot()
+
+
+
 
 
